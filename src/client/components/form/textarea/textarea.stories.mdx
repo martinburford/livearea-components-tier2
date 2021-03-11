@@ -1,0 +1,132 @@
+import { ArgsTable, Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import Textarea from "./";
+import CodeBlock from "../../storybook/code-block";
+
+<Meta title="Forms/Textarea" component={Textarea} />
+
+# Textarea
+
+The textarea component is used for all textareas throughout the website.
+
+## **Component props**
+
+<ArgsTable storyOf={Textarea} />
+
+## Examples
+
+### **Default State**
+
+<Preview withSource="none">
+  <Story name="Default State">
+    <Textarea
+      input={{
+        name: "textareaDefaultState",
+        onChange: () => {},
+        value: ""
+      }}
+      placeholder="Default state"
+      touched={true}
+    />
+    <CodeBlock>
+      {`<Textarea
+  input={{
+    name: "textareaDefaultState",
+    onChange: () => {},
+    value: ""
+  }}
+  placeholder="Default state"
+  touched={true}
+/>`}
+    </CodeBlock>
+  </Story>
+</Preview>
+
+### **Maxlength**
+
+<Preview withSource="none">
+  <Story name="Maxlength">
+    <Textarea
+      input={{
+        name: "textareaMaxlength",
+        onChange: () => {},
+        value: ""
+      }}
+      maxlength={10}
+      placeholder="Maxlength"
+      touched={true}
+    />
+    <CodeBlock>
+      {`<Textarea
+  input={{
+    name: "textareaRequired",
+    onChange: () => {},
+    value: ""
+  }}
+  maxlength={10}
+  placeholder="Required"
+  touched={true}
+/>`}
+    </CodeBlock>
+  </Story>
+</Preview>
+
+### **Required**
+
+<Preview withSource="none">
+  <Story name="Required">
+    <Textarea
+      input={{
+        name: "textareaRequired",
+        onChange: () => {},
+        value: ""
+      }}
+      placeholder="Required"
+      required={true}
+      touched={true}
+    />
+    <CodeBlock>
+      {`<Textarea
+  input={{
+    name: "textareaRequired",
+    onChange: () => {},
+    value: ""
+  }}
+  placeholder="Required"
+  required={true}
+  touched={true}
+/>`}
+    </CodeBlock>
+  </Story>
+</Preview>
+
+### **Error**
+
+<Preview withSource="none">
+  <Story name="Error">
+    <Textarea
+      error="Value required"
+      input={{
+        name: "textareaError",
+        onChange: () => {},
+        value: ""
+      }}
+      placeholder="Error"
+      required={true}
+      touched={true}
+    />
+    <CodeBlock>
+      {`<Textarea
+  error="Value required"
+  input={{
+    name: "textareaError",
+    onChange: () => {},
+    value: ""
+  }}
+  placeholder="Error"
+  required={true}
+  touched={true}
+/>`}
+    </CodeBlock>
+  </Story>
+</Preview>

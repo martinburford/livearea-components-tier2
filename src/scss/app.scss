@@ -1,0 +1,110 @@
+@import './placeholders';
+@import './reset';
+@import './variables';
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 1.5em;
+}
+
+body {
+  color: $fossil;
+  font-size: 14px;
+  -webkit-text-size-adjust: none; // This fixes an iOS Safari bug when scaling websites. Some relatively sized elements weren't scaling as expected
+}
+
+a {
+  color: $tree;
+  text-decoration: underline;
+
+  @media(hover: hover) {
+    &:active,
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+[data-clickable] {
+  cursor: pointer;
+}
+
+[data-component] {
+  @extend %component-gutter;
+}
+
+[data-hidden] {
+  display: none;
+}
+
+[data-no-margins] {
+  margin: 0;
+}
+
+[data-inline-block] {
+  display: inline-block;
+}
+
+// body {
+//   /* stylelint-disable */
+//   /* Linting doesn't allow &.xxx to be concatenated to elements, due to CSS modules being in use */
+//   &.modal-visible {
+//     overflow: hidden;
+//   }
+//   /* stylelint-enable */
+// }
+
+// ::selection {
+//   background: #b3d7fe;
+//   color: $grey4;
+// }
+
+// strong {
+//   font-weight: 700;
+// }
+
+// [data-launch-intercom] {
+//   cursor: pointer;
+// }
+
+// /* stylelint-disable */
+// /* Linting doesn't allow elements to be the qualifying type selector, however in this case it's required */
+// input[type='email'] {
+//   -webkit-appearance: none;
+// }
+// /* stylelint-enable */
+
+// .modal-table {
+//   border-collapse: collapse;
+//   width: 100%;
+
+//   th,
+//   td {
+//     border: $border-xxs solid $grey4;
+//     padding: $spacing-xxs;
+//     text-align: left;
+//     vertical-align: top;
+//   }
+
+//   th {
+//     background: $primary-shade-10;
+//   }
+// }
+
+// [data-selector='hidden'] {
+//   display: none;
+// }
+
+// [data-selector='image-block'] {
+//   display: block;
+//   width: 100%;
+// }
+
+// // Set all Storybook components to have no vertical gutters
+// [data-storybook-no-margins='true'] {
+//   margin-bottom: 0 !important;
+//   margin-top: 20px !important;
+// }

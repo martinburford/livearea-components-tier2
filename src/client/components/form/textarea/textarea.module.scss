@@ -1,0 +1,54 @@
+@import '../../../../scss/placeholders';
+@import '../../../../scss/variables';
+
+$textarea-min-height: 40px;
+
+.auto-resize,
+.textarea {
+  border-color: $stone;
+  border-radius: $radius-m;
+  border-style: solid;
+  border-width: $border-xxs;
+  box-sizing: border-box;
+  color: $fossil;
+  min-height: 8rem;
+  outline: none;
+  padding: $spacing-xs;
+  transition: background-color $transition-fast ease-in-out, border-color $transition-fast ease-in-out;
+  width: 100%;
+
+  &:focus {
+    background-color: rgba($linen, 0.5);
+    border-color: $tree;
+  }
+
+  &::placeholder {
+    color: $dust;
+  }
+}
+
+.auto-resize {
+  position: relative;
+  z-index: -1;
+}
+
+[data-selector='textarea'] {
+  position: relative;
+
+  .textarea {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    resize: none;
+    top: 0;
+    width: 100%;
+  }
+}
+
+[contenteditable=true]:empty::before {
+  color: $dust;
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  pointer-events: none;
+}

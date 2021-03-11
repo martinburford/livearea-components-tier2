@@ -1,0 +1,65 @@
+@import '../../../scss/variables';
+
+$form-item-required-top-offset: 2px;
+
+[data-form-item] {
+  margin-top: $spacing-xs;
+
+  @include breakpoint($tablet-portrait-down) {
+    overflow: hidden;
+  }
+}
+
+[data-form-item-error]:not([data-form-item-error^='false']) {
+  input,
+  select,
+  textarea,
+  [data-selector='checkbox'] {
+    border-color: $red;
+
+    &:focus {
+      border-color: $red;
+    }
+  }
+
+  [data-selector='checkbox'] {
+    background: rgba($red, 0.1);
+  }
+}
+
+[data-form-error-message] {
+  color: $red;
+  font-size: 0.85em;
+  margin-top: $spacing-xxs;
+}
+
+@include breakpoint($desktop-up) {
+  [data-selector^='form-split-'] {
+    align-items: top;
+    display: flex;
+    margin-left: -$spacing-xs;
+    width: calc(100% + #{$spacing-xs});
+  
+    > div {
+      margin-left: $spacing-xs;
+    }
+  }
+  
+  [data-selector='form-split-2'] > div { 
+    width: 50%;
+  }
+}
+
+/* stylelint-disable */
+/* Linting doesn't allow elements to be the qualifying type selector, however in this case it's required */
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+input[type='text'],
+select,
+textarea {
+  display: block;
+  font-size: 1em;
+  -webkit-appearance: none;
+}
+/* stylelint-enable */
