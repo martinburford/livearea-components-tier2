@@ -1,29 +1,12 @@
 module.exports = {
-  // addons: ["@storybook/addon-docs", "@storybook/addon-viewport"],
-
-  addons: [
-    {
-      name: '@storybook/addon-docs',
-      options: { transcludeMarkdown: false },
-    },
-    "@storybook/addon-viewport"
+  "stories": [
+    "../src/**/*.stories.mdx"
   ],
-
-  stories: [
-    "../src/client/components/**/*.stories.mdx",
-    "../src/client/components/**/*.stories.js"
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials"
   ],
   webpackFinal: (config) => {
-    // Default rule for images /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));
-    fileLoaderRule.exclude = /\.svg$/;
-
-    // Merge our rule with existing assetLoader rules
-    config.module.rules.unshift({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"]
-    });
-
     config.module.rules.push({
       test: /\.module\.s(a|c)ss$/,
       loader: [
@@ -63,4 +46,4 @@ module.exports = {
 
     return config;
   }
-};
+}

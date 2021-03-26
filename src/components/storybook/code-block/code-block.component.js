@@ -6,10 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import CodeTheme from "react-syntax-highlighter/dist/esm/styles/prism/base16-ateliersulphurpool.light";
 import styles from "./code-block.module.scss";
 
-// Types
-import { ICodeBlock } from "./code-block.types";
-
-export const CodeBlock: React.FC<ICodeBlock> = ({ children, noMargins = false }) => {
+export const CodeBlock = ({ children, noMargins = false }) => {
   // Bind classnames to the components CSS module object in order to access its modular styles
   const cx = Classnames.bind(styles);
   const classnames = cx({
